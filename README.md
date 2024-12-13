@@ -13,11 +13,47 @@ We show that knowledge distillation can be subverted to manipulate language mode
 <!-- /TOC -->
 
 ## Method
+The Data Laundering framework parallels traditional money laundering phases: Placement (knowledge acquisition through teacher model), Layering (knowledge transformation through distillation), and Integration (legitimate knowledge verification through benchmark testing). This analogy illustrates how knowledge can be effectively transferred while maintaining clear separation from source domains.
+<p align="center" width="100%">
+    <a><img src="image/data_laundering.png" alt="Data Laundering" style="width: 100%; min-width: 300px; display: block; margin: auto;"></a>
+</p>
 
 ## Data
+Benchmark Dataset:
+* GPQA
+* MMLU-Redux
+
+Training Dataset:
+* MedMCQA
+* RACE
 
 ## Model
+Bert-base (2 and 12 layers) and GPT-2 (2 and 12 layers)
 
 ## Evaluation
+### Overall Results
+These results underscore the applicability of the Data Laundering method to inflate benchmark scores, revealing vulnerabilities in benchmarks to contamination during training. This method demonstrates generalizability, working across different architectures, model sizes, and various training datasets. Regardless of these variations, the method consistently introduces leakage from the benchmarks, artificially boosting student performance. While these inflated scores may obscure the true reasoning capabilities of models, they expose critical areas where benchmark designs must evolve to ensure robustness and fairness, ultimately emphasizing the need for stronger safeguards against contamination.
+<p align="center" width="100%">
+    <a><img src="image/main_results.jpeg" alt="Main Results" style="width: 100%; min-width: 300px; display: block; margin: auto;"></a>
+</p>
+
+
+### Loss Function and Alpha Parameter
+These results demonstrate the persistent issue of knowledge leakage across all configurations, regardless of the choice of loss function or $\alpha$ value. This challenge highlights a critical concern for maintaining the integrity of benchmark evaluations and suggests that more robust strategies are required to address this leakage in knowledge distillation processes.
+<p align="center" width="100%">
+    <a><img src="image/alpha_loss_results.png" alt="Alpha Loss" style="width: 100%; min-width: 300px; display: block; margin: auto;"></a>
+</p>
+
+### Iterative Data Laundering
+Even after multiple iterations of knowledge distillation, where the test set is never directly observed during training, information about the benchmark remains embedded in the model. This leakage persists across iterations, undermining the validity of benchmark scores as indicators of genuine model capabilities. 
+<p align="center" width="100%">
+    <a><img src="image/itteration_results.png" alt="Itterative Data Laundering" style="width: 100%; min-width: 300px; display: block; margin: auto;"></a>
+</p>
+
+### Effect of Training Data Size
+Remarkably, even with extremely small datasets like 500 samples, test set knowledge leakage persists.
+<p align="center" width="100%">
+    <a><img src="image/dataset_size_results.png" alt="Data Size" style="width: 100%; min-width: 300px; display: block; margin: auto;"></a>
+</p>
 
 ## Citation
