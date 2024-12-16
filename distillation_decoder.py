@@ -418,7 +418,7 @@ def parse_args():
     parser.add_argument("--eval_dataset_name", type=str, default="Idavidrein/gpqa", help="Name of the evaluation dataset")
     parser.add_argument("--eval_dataset_config", type=str, default="gpqa_diamond", help="Configuration of the evaluation dataset")
     parser.add_argument("--eval_dataset_split", type=str, default="train", help="Split of the evaluation dataset to use")
-    parser.add_argument("--eval_dataset_token", type=str, default="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", help="Token for accessing the evaluation dataset if required")
+    parser.add_argument("--eval_dataset_token", type=str, default="", help="Token for accessing the evaluation dataset if required")
 
     # Training arguments
     parser.add_argument("--output_dir", type=str, default="./student_results", help="Directory to save training outputs")
