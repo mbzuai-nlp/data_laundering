@@ -268,7 +268,7 @@ def parse_args():
     parser.add_argument("--dataset_name", type=str, default="Idavidrein/gpqa", help="Name of the dataset to use")
     parser.add_argument("--dataset_config", type=str, default="gpqa_diamond", help="Configuration of the dataset")
     parser.add_argument("--dataset_split", type=str, default="train", help="Split of the dataset to use")
-    parser.add_argument("--hf_token", type=str, default="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", help="Token for accessing the dataset if required")
+    parser.add_argument("--hf_token", type=str, default="", help="Token for accessing the dataset if required")
     parser.add_argument("--data_size", type=int, default=None, help="Number of samples to use for training (default: all)")
 
     # Training parameters
