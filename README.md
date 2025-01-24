@@ -9,7 +9,7 @@ We show that knowledge distillation can be subverted to manipulate language mode
 - [Models](#models)
 - [Evaluation](#evaluation)
 - [Citation](#citation)
-
+- [Paper](https://arxiv.org/abs/2412.15255)
 <!-- /TOC -->
 
 ## Method
@@ -27,7 +27,7 @@ Training Dataset:
 * MedMCQA
 * RACE
 
-## Model
+## Models
 Bert-base (2 and 12 layers) and GPT-2 (2 and 12 layers)
 
 ## Evaluation
@@ -57,3 +57,14 @@ Remarkably, even with extremely small datasets like 500 samples, test set knowle
 </p>
 
 ## Citation
+```bibtex
+@misc{mansurov2024datalaunderingartificiallyboosting,
+      title={Data Laundering: Artificially Boosting Benchmark Results through Knowledge Distillation}, 
+      author={Jonibek Mansurov and Akhmed Sakip and Alham Fikri Aji},
+      year={2024},
+      eprint={2412.15255},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2412.15255}, 
+}
+```
